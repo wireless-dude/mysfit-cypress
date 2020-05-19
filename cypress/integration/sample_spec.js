@@ -14,8 +14,11 @@ describe('My First Test', () => {
     .type('fake@email.com')
     .should('have.value', 'fake@email.com')
     })
-    it('Visits the Mysfit site', () => {
-        cy.visit('http://mystic-tutorial-gary-sw.s3-website.us-east-2.amazonaws.com/')
-        cy.contains('Hasla')
+
+    it.only('Visits the Querying section of Kitchen Sink', () => {
+        cy.visit('https://example.cypress.io')
+        .contains('Querying').scrollIntoView()
+        .get(':nth-child(4) > .row > .col-xs-12 > .home-list > :nth-child(1) > ul > :nth-child(1) > a').click()
+        
     })
 })
